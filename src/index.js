@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import App from './App';
-import End from './End'
+import CountDownTimer from './CountDownTimer';
+import Dimensions from './Dimensions';
+import End from './End';
 import reportWebVitals from './reportWebVitals';
+import Timer from './Timer'
 import logo from './quasar.png';
 
 
@@ -14,7 +17,11 @@ const Routing = () => {
     <Router>
       <Routes>
         <Route path="/" exact element={<App/>} />
+        <Route path="/countDown" element={<CountDownTimer/>} />
+        <Route path="/dimensions" element={<Dimensions/>} />
         <Route path="/end" element={<End/>} />
+        <Route path="/vitals" element={<reportWebVitals/>} />
+        <Route path="/timer" element={<Timer/>} />
       </Routes>
     </Router>
   )
