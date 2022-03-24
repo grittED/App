@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import App from './App';
+import End from './End'
 import reportWebVitals from './reportWebVitals';
+import logo from './quasar.png';
+
+
+const Routing = () => {
+  return(
+    
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<App/>} />
+        <Route path="/end" element={<End/>} />
+      </Routes>
+    </Router>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <Routing />
   </React.StrictMode>,
   document.getElementById('root')
 );
