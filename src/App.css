@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 25vmin;
+  pointer-events: none;
+}
+
+.App-robot {
+  height: 22vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #00ffff;
+  min-height: 1vh;
+  max-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(90px);
+  color: #ffff00;
+}
+
+.App-body {
+  background-color: #00ffff;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px);
+  color: black;
+}
+
+.App-link {
+  color: #ffff00;
+}
+
+.App-button{
+  background-color: #00ced1;
+  border: none;
+  color: #ffff00;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.App-footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #00ffff;
+   color: #ffff00;
+   text-align: center;
+}
+
+.App-footer-logo {
+  height: 8vmin;
+  pointer-events: none;
+}
+
+.App-para{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  margin-bottom: -0.5px;
+  width: 600px;
+}
+
+.App-input-layout{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  width: 240px;
+  margin-bottom: -20px
+}
+
+.App-input{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  box-sizing: border-box;
+
+}
+
+.App-timer {
+  height: 25vmin;
+  pointer-events: none;
+}
+
+
