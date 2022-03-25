@@ -1,16 +1,17 @@
 import React from 'react'
+import {Redirect} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const CountDownTimer = ({hoursMinSecs}) => {
-   
     const { hours = 0, minutes = 0, seconds = 60 } = hoursMinSecs;
     const [[hrs, mins, secs], setTime] = React.useState([hours, minutes, seconds]);
+    const navigate = useNavigate();
     
-
     const tick = () => {
-   
-        if (hrs === 0 && mins === 0 && secs === 0) 
-            reset()
-        else if (mins === 0 && secs === 0) {
+        if (hrs === 0 && mins === 0 && secs === 0) {
+            navigate("/end", {replace: true });
+        } else if (mins === 0 && secs === 0) {
             setTime([hrs - 1, 59, 59]);
         } else if (secs === 0) {
             setTime([hrs, mins - 1, 59]);
@@ -19,16 +20,13 @@ const CountDownTimer = ({hoursMinSecs}) => {
         }
     };
 
-
     const reset = () => setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)]);
 
-    
     React.useEffect(() => {
         const timerId = setInterval(() => tick(), 1000);
         return () => clearInterval(timerId);
     });
 
-    
     return (
         <div>
             <p>{`${hrs.toString().padStart(2, '0')}:${mins

@@ -1,9 +1,9 @@
 import logo from './quasar.png';
-import { Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import './App.css';
 
-export default function App() {
+function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -11,7 +11,7 @@ export default function App() {
       </header>
 
       <body className="App-body">
-        <Link to="/end">
+        <Link to="/dimensions">
           <button className="App-button">Start Gritting</button>
         </Link>
       </body>
@@ -24,4 +24,4 @@ export default function App() {
   );
 }
 
-
+export default App;
