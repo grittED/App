@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
@@ -10,18 +10,20 @@ import reportWebVitals from './reportWebVitals';
 import Timer from './Timer'
 import logo from './quasar.png';
 
-
 const Routing = () => {
+  const [x, setX] = useState(0)
+  const [y, setY] = useState(0)
+
   return(
     
     <Router>
       <Routes>
         <Route path="/" exact element={<App/>} />
         <Route path="/countDown" element={<CountDownTimer/>} />
-        <Route path="/dimensions" element={<Dimensions/>} />
+        <Route path="/dimensions" element={<Dimensions xSetter={setX} ySetter={setY}/>} />
         <Route path="/end" element={<End/>} />
         <Route path="/vitals" element={<reportWebVitals/>} />
-        <Route path="/timer" element={<Timer/>} />
+        <Route path="/timer" element={<Timer xValue={x} yValue={y}/>} />
       </Routes>
     </Router>
   )
