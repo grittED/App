@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 25vmin;
+  height: 19vmin;
   pointer-events: none;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .App-header {
-  background-color: #00ffff;
-  min-height: 1vh;
+  background-color: #ffd600;
+  min-height: 15vh;
   max-height: 15vh;
   display: flex;
   flex-direction: column;
@@ -25,24 +25,24 @@
 }
 
 .App-body {
-  background-color: #00ffff;
-  min-height: 70vh;
+  background-color: #ffd600;
+  min-height: 72vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(20px);
+  font-size: calc(18.88px);
   color: black;
 }
 
 .App-link {
-  color: #ffff00;
+  color: #ffd600;
 }
 
 .App-button{
-  background-color: #00ced1;
+  background-color: #000000;
   border: none;
-  color: #ffff00;
+  color: #ffd600;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
@@ -59,8 +59,8 @@
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #00ffff;
-   color: #ffff00;
+   background-color: #ffd600;
+   color: #000000;
    text-align: center;
 }
 
