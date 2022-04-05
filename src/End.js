@@ -20,7 +20,7 @@ function End() {
 	  </body>
 
 	  <footer className = "App-footer">
-        <p>grittEd is brought to you by </p>
+        <p>GrittEd is brought to you by </p>
 	    <img src={logo} className="App-footer-logo" alt="logo" />
       </footer>
     </div>
