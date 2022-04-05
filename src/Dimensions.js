@@ -1,6 +1,6 @@
 import logo from './quasar.png';
 import {useState} from 'react';
-import robot from './robot.png
+import robot from './robot.png';
 import gritted from './gritted.png';
 import {Link} from "react-router-dom";
 import './App.css';
