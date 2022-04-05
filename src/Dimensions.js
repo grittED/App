@@ -19,7 +19,7 @@ function Dimensions({xSetter, ySetter}) {
          <img src={gritted} className="App-logo" alt="gritted" />
 	  </header>
 	  <body className="App-body">
-	    <p className = "App-para"> Ensure your grittEd device is situated in the bottom left hand corner of the rectangle you want to grit as shown in the diagram. </p>
+	    <p className = "App-para"> Ensure your GrittEd device is situated in the bottom left hand corner of the rectangle you want to grit as shown in the diagram. </p>
 	    <img src={robot} className="App-robot" alt="robot" />
 	    <p className = "App-para"> Enter the dimensions of the rectangle in meters below and then press start to start gritting. </p>
 	    <p className="App-input-layout"> Enter X:  <input className="App-input" onChange={evt => setX(evt.target.value)}/>  Enter Y: <input className="App-input" onChange={evt => setY(evt.target.value)}/> </p>
@@ -29,7 +29,7 @@ function Dimensions({xSetter, ySetter}) {
         </Link>
 	  </body>
 	  <footer className = "App-footer">
-        <p>grittEd is brought to you by </p>
+        <p>GrittEd is brought to you by </p>
 	    <img src={logo} className="App-footer-logo" alt="logo" />
       </footer>
     </div>
