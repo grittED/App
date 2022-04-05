@@ -1,6 +1,7 @@
 import logo from './quasar.png';
 import {useState} from 'react';
-import robot from './robot.png';
+import robot from './robot.png
+import gritted from './gritted.png';
 import {Link} from "react-router-dom";
 import './App.css';
 
@@ -15,7 +16,7 @@ function Dimensions({xSetter, ySetter}) {
   return (
     <div className="App">
 	  <header className="App-header">
-        <p> GrittEd </p>
+         <img src={gritted} className="App-logo" alt="gritted" />
 	  </header>
 	  <body className="App-body">
 	    <p className = "App-para"> Ensure your grittEd device is situated in the bottom left hand corner of the rectangle you want to grit as shown in the diagram. </p>
