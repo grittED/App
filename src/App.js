@@ -1,4 +1,5 @@
 import logo from './quasar.png';
+import gritted from './gritted.png';
 import {Link} from "react-router-dom";
 
 import './App.css';
@@ -7,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-            <p> GrittEd </p>
+            <img src={gritted} className="App-logo" alt="gritted" />
       </header>
 
       <body className="App-body">
