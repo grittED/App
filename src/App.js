@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import React from 'react';
 import met from "./met.json";
 import raw from './raw.txt';
+import warning from './weather-warning.png';
 
 import './App.css';
 
@@ -55,7 +56,7 @@ class App extends React.Component {
       if (data.SiteRep.DV.Location.Period.at(0).Rep.at(i).T <= 0) {
         return warnRender(data.SiteRep.DV.Location.Period.at(0).Rep.at(i).T,
         data.SiteRep.DV.Location.Period.at(0).Rep.at(i).$,
-        data.SiteRep.DV.Location.Period.at(0).Rep.at(i).$ - timeNow);
+        data.SiteRep.DV.Location.Period.at(0).Rep.at(i).$ - timeNow - 180);
       }
     }
 
@@ -63,7 +64,7 @@ class App extends React.Component {
       if (data.SiteRep.DV.Location.Period.at(1).Rep.at(i).T <= 0) {
         return warnRender(data.SiteRep.DV.Location.Period.at(1).Rep.at(i).T,
         data.SiteRep.DV.Location.Period.at(1).Rep.at(i).$,
-        data.SiteRep.DV.Location.Period.at(1).Rep.at(i).$ - timeNow + 1440);
+        data.SiteRep.DV.Location.Period.at(1).Rep.at(i).$ - timeNow + 1440 - 180);
       }
     }
     
@@ -92,7 +93,9 @@ function warnRender(temp, freezeTime, timeUntilFreeze) {
       </header>
 
       <body className="App-body">
-        <p>{temp} {freezeTime} {timeUntilFreeze}</p>
+        <img src={warning} className="App-logo" alt="weather warning" />
+        <p>WARNING: Temperature of -{temp}C at {to24Hours(freezeTime)}, Gritting Scheduled</p>
+        <p>Automatically Starting in {timeLeft(timeUntilFreeze)} Minutes</p>
         <Link to="/dimensions">
           <button className="App-button">WARNING</button>
         </Link>
@@ -115,8 +118,11 @@ function superWarning () {
       </header>
 
       <body className="App-body">
+        <img src={warning} className="App-logo" alt="weather warning" />
+        <p>WARNING: Imminent Ice, Gritting Recommended</p>
+        <p>Automatically Starting in 5 Minutes</p>
         <Link to="/dimensions">
-          <button className="App-button">SUPER WARNING</button>
+          <button className="App-button">Start Gritting</button>
         </Link>
       </body>
 
@@ -148,5 +154,40 @@ function noWarnRender () {
     </div>
   );
 }
+
+function to24Hours (minutes) {
+  let hours = Math.floor(minutes / 60);
+  let mins = minutes % 60;
+  let day = "";
+  
+
+  return ('00'+hours).slice(-2) + ":" + ('00'+mins).slice(-2) + day;  
+}
+
+function timeLeft (minutesLeft) {
+  let hours = Math.floor(minutesLeft / 60);
+  let mins = minutesLeft % 60;
+
+  var now = new Date();
+  var nowHours = now.getHours();
+  var nowMinutes = now.getMinutes();
+  var timeNow = (nowHours * 60) + nowMinutes;
+
+  var minsTIll2 = 1440 + 180 - timeNow
+
+  if (minsTIll2 < mins) {
+    hours = Math.floor(minsTIll2 / 60);
+    mins = minsTIll2 % 60;
+  }
+
+  if (hours > 0) {
+    return hours + " Hours and " + mins;
+  }
+
+
+  return mins;  
+}
+
+
 
 export default App;
