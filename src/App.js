@@ -97,7 +97,7 @@ function warnRender(temp, freezeTime, timeUntilFreeze) {
         <p>WARNING: Temperature of -{temp}C at {to24Hours(freezeTime)}, Gritting Scheduled</p>
         <p>Automatically Starting in {timeLeft(timeUntilFreeze)} Minutes</p>
         <Link to="/dimensions">
-          <button className="App-button">WARNING</button>
+          <button className="App-button">Start Gritting</button>
         </Link>
       </body>
 
